@@ -1,0 +1,25 @@
+.ir__header {
+    will-change: transform;
+    transition: transform 200ms ease-out;
+}
+
+.ir__header--pinned {
+    transform: translateY(0%);
+}
+
+.ir__header--unpinned {
+    transform: translateY(-100%);
+}
+
+.ir__footer {
+    will-change: transform;
+    transition: transform 200ms ease-out;
+}
+
+.ir__footer--pinned {
+    transform: translateY(0%);
+}
+
+.ir__footer--unpinned {
+    transform: translateY(100%);
+}
