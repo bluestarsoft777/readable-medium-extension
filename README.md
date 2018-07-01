@@ -2,6 +2,8 @@
 
 This is a Chrome extension which will remove Medium's large header and footer to make the content more readable. The script is very lightweight and shouldn't add too much overhead to the application
 
+You can install it from [Chrome web store](https://chrome.google.com/webstore/detail/readable-mediumcom/jiopenehkeajnaibdidoaaecammkdooo)
+
 ## Getting Started
 
 If you want to try it locally, just clone the project, add changes to the scripts in src/
