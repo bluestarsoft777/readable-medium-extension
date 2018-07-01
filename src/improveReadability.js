@@ -1,16 +1,46 @@
 import Headroom from 'headroom.js'
 
 chrome.extension.sendMessage({}, function(response) {
-    var readyStateCheckInterval = setInterval(function() {
+    const readyStateCheckInterval = setInterval(function() {
     if (document.readyState === "complete") {
         clearInterval(readyStateCheckInterval)
 
+        watchPopups()
         hideHeader()
         hideFooter()
     }
     }, 10)
 })
 
+function watchPopups() {
+    const htmlEl = document.querySelector('html')
+    
+    const observer = new MutationObserver(function (event) {
+        removePopup(htmlEl)
+    })
+
+    observer.observe(htmlEl, {
+      attributes: true, 
+      attributeFilter: ['class'],
+      childList: false, 
+      characterData: false
+    })
+
+    removePopup(htmlEl)
+}
+
+function removePopup(htmlEl) {
+    const isPopupVisible = htmlEl.classList.contains('u-overflowHidden')
+
+    if (!isPopupVisible) return
+
+    // this class prevents page scrolling
+    const htmlClassName = "u-overflowHidden"
+    htmlEl.classList.remove(htmlClassName)
+
+    const overlayEl = document.querySelector('.overlay')
+    overlayEl && overlayEl.remove()
+}
 
 function hideHeader() {
     const headerElement = document.querySelector('.js-metabar')

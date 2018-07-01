@@ -1,9 +1,8 @@
 {
-  "name": "Readable Medium.com 1",
-  "version": "0.0.1",
+  "name": "Readable Medium.com",
+  "version": "1.0.1",
   "manifest_version": 2,
-  "description": "This extension removes the header/footer on Medium.com to improve readability",
-  "homepage_url": "http://extensionizr.com",
+  "description": "Chrome extension which hides Medium.com header, footer and removes automatic sign in modal to improves read experience",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",
@@ -15,7 +14,8 @@
     {
       "matches": [
         "*://medium.com/*",
-        "*://medium.freecodecamp.org/*"
+        "*://medium.freecodecamp.org/*",
+        "*://hackernoon.com/*"
       ],
       "js": [
         "src/improveReadability.js"
