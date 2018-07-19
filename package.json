@@ -1,6 +1,6 @@
 {
   "name": "readable-medium",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Chrome extension which hides Medium.com header, footer and removes automatic sign in modal to improves read experience",
   "main": "index.js",
   "author": "Davor Badrov",
